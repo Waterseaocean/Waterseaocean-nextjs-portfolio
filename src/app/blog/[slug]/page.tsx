@@ -1,9 +1,11 @@
 // src/app/blog/[slug]/page.tsx
 interface BlogPostProps {
-  params: { slug: string }
+  params: { slug: string };
 }
 
-export default function BlogPost({ params }: BlogPostProps) {
+export default async function BlogPost({ params }: BlogPostProps) {
+  const { slug } = await params; // awaitが必要になるケースがある
+
   return (
     <main className="p-8">
       <h1 className="text-2xl font-bold">{params.slug} の記事</h1>
