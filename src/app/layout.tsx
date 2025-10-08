@@ -16,6 +16,7 @@ export default function RootLayout({
             <Link href="/blog">ブログ一覧へ</Link>
           </nav>
         </header>
+        {/* メインコンテンツ:/ や /blog、/blog/[slug] のコンテンツが children に埋め込まれる */}
         <main>{children}</main>
         <footer className="p-4 bg-gray-100 border-t mt-8 text-center">
           © 2025 My Blog
