@@ -23,11 +23,15 @@ export default async function BlogPost({ params }: BlogPostProps) {
 
   return (
     <main className="p-8">
-      <h1 className="text-2xl font-bold">{data.title}</h1>
-      <p className="text-gray-500">{data.date}</p>
+      <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+        {data.title}
+      </h1>
+      <p className="text-gray-500 dark:text-gray-400">
+        {data.date}
+      </p>
       {/* MarkdownをHTMLとして埋め込む */}
       <article
-        className="mt-4 prose"
+        className="mt-4 prose dark:prose-dark [&_li]:text-inherit"
         dangerouslySetInnerHTML={{ __html: contentHtml }}
       />
     </main>
